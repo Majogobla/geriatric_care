@@ -1,0 +1,28 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="En Geriatric Care ofrecemos servicios de enfermería y cuidado personalizado a domicilio. Nuestro equipo de enfermeras y cuidadoras altamente capacitadas brinda atención compasiva y profesional a personas de todas las edades y necesidades. Contacta con nosotros para recibir cuidados de calidad en la comodidad de tu hogar." />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon-dark.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+
+		<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
+	</body>
+</html>
+
+<!-- <style is:global>
+	
+</style> -->
