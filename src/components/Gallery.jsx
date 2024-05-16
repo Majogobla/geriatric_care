@@ -1,8 +1,6 @@
 import React from "react"
 import { useState } from "react"
 
-import { Gallery } from "react-grid-gallery"
-
 import PhotoAlbum from "react-photo-album"
 
 import Lightbox from "yet-another-react-lightbox"
@@ -95,7 +93,6 @@ export default function Counter() {
         open={index >= 0}
         index={index}
         close={() => setIndex(-1)}
-        // enable optional lightbox plugins
         plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
       />
     </section>
