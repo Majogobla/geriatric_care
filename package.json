@@ -10,9 +10,17 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/react": "^3.3.4",
     "@astrojs/tailwind": "^5.1.0",
+    "@types/react": "^18.3.2",
+    "@types/react-dom": "^18.3.0",
     "astro": "^4.5.16",
     "flowbite": "^2.3.0",
-    "tailwindcss": "^3.4.3"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-grid-gallery": "^1.0.1",
+    "react-photo-album": "^2.3.1",
+    "tailwindcss": "^3.4.3",
+    "yet-another-react-lightbox": "^3.18.0"
   }
 }
