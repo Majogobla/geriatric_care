@@ -83,8 +83,8 @@ export default function Counter() {
   const [index, setIndex] = useState(-1)
 
   return(
-    <section className=" w-full bg-[#008000]">
-      <div className="max-w-screen-2xl w-full mx-auto px-4 py-12">
+    <section className=" w-full bg-[#F4E4BA] dark:bg-[#353535] dark:border-y-2 dark:border-white">
+      <div className="max-w-screen-2xl w-full mx-auto p-4">
         <PhotoAlbum layout="columns" photos={images} onClick={({ index }) => setIndex(index)}/>
       </div>
 
