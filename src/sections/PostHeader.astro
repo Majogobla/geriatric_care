@@ -2,7 +2,7 @@
 
 ---
 
-<section class="bg-[#F4E4BA] dark:bg-[#353535] transition-all">
+<section class="bg-[#F4E4BA] dark:bg-[#353535] transition-all lg:pt-12 pt-2" id="home">
   <div class="max-w-screen-xl px-8 mx-auto flex flex-col lg:flex-row items-start">
     <div class="flex flex-col w-full lg:w-6/12 justify-center lg:pt-24 items-start text-center lg:text-left mb-5 md:mb-0">
       <h1 data-aos="fade-right" data-aos-once="true" class="mb-4 md:my-4 text-3xl md:text-5xl font-bold leading-tight text-darken text-[#353535] dark:text-white">
@@ -55,39 +55,3 @@
     <div class="bg-white w-full h-10 md:h-20 dark:bg-[#353535] -mt-1"></div>
   </div>
 </section>
-
-<style is:global>
-	.floating { 
-			animation-name: floating; 
-			animation-duration: 3s; 
-			animation-iteration-count: infinite; 
-			animation-timing-function: ease-in-out;
-	}
-	
-	@keyframes floating { 
-			0% { transform: translate(0, 0px); } 
-			50% { transform: translate(0, 8px); } 
-			100% { transform: translate(0, -0px); }  
-	}
-
-	.floating-4 { 
-			animation-name: floating; 
-			animation-duration: 4s; 
-			animation-iteration-count: infinite; 
-			animation-timing-function: ease-in-out;
-	} 
-
-	@keyframes floating-4 { 
-			0% { transform: translate(0, 0px); } 
-			50% { transform: translate(0, 8px); } 
-			100% { transform: translate(0, -0px); }  
-	}
-
-  .dark #nurse {
-    mask-image: linear-gradient(
-      to bottom,
-      black 82%,
-      transparent 86%
-    );
-  }
-</style>

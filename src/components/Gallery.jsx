@@ -14,68 +14,68 @@ import "yet-another-react-lightbox/plugins/thumbnails.css"
 const images = [
   {
      src: "/gallery/image (1).webp",
-     width: 532,
-     height: 355,
+     width: 1620,
+     height: 1080,
   },
   {
     src: "/gallery/image (2).webp",
-    width: 590,
-    height: 410,
+    width: 1556,
+    height: 1080,
   },
   {
     src: "/gallery/image (3).webp",
-    width: 576,
-    height: 383,
+    width: 1623,
+    height: 1080,
   },
   {
     src: "/gallery/image (4).webp",
-    width: 450,
-    height: 300,
+    width: 1618,
+    height: 1080,
   },
   {
     src: "/gallery/image (5).webp",
-    width: 471,
-    height: 706,
+    width: 721,
+    height: 1080,
   },
   {
     src: "/gallery/image (6).webp",
-    width: 216,
-    height: 384,
+    width: 608,
+    height: 1080,
   },
   {
     src: "/gallery/image (7).webp",
-    width: 624,
-    height: 416,
+    width: 1620,
+    height: 1080,
   },
   {
     src: "/gallery/image (8).webp",
-    width: 604,
-    height: 402,
+    width: 1623,
+    height: 1080,
   },
   {
     src: "/gallery/image (9).webp",
-    width: 472,
-    height: 708,
+    width: 721,
+    height: 1080,
   },
   {
     src: "/gallery/image (10).webp",
-    width: 883,
-    height: 489,
+    width: 1920,
+    height: 1064,
   },
   {
     src: "/gallery/image (11).webp",
-    width: 1000,
-    height: 695,
+    width: 1554,
+    height: 1080,
   },
   {
     src: "/gallery/image (12).webp",
-    width: 740,
-    height: 493,
+    width: 1619,
+    height: 1080,
   },
   {
     src: "/gallery/image (13).webp",
-    width: 552,
-    height: 367,
+    width: 1624,
+    height: 1080,
   },
 ]
 
@@ -83,7 +83,9 @@ export default function Counter() {
   const [index, setIndex] = useState(-1)
 
   return(
-    <section className=" w-full bg-[#F4E4BA] dark:bg-[#353535] dark:border-y-2 dark:border-white">
+    <section className=" w-full bg-[#F4E4BA] dark:bg-[#353535] min-h-screen flex flex-col justify-center pt-44 md:pt-32 lg:pt-20" id="about-us">
+      <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#353535] dark:text-white mb-4">Nuestro Trabajo</h2>
+
       <div className="max-w-screen-2xl w-full mx-auto p-4">
         <PhotoAlbum layout="columns" photos={images} onClick={({ index }) => setIndex(index)}/>
       </div>
