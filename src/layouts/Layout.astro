@@ -8,6 +8,7 @@ import { ViewTransitions } from "astro:transitions"
 		<meta charset="UTF-8" />
 		<meta name="description" content="En Geriatric Care ofrecemos servicios de enfermería y cuidado personalizado a domicilio. Nuestro equipo de enfermeras y cuidadoras altamente capacitadas brinda atención compasiva y profesional a personas de todas las edades y necesidades. Contacta con nosotros para recibir cuidados de calidad en la comodidad de tu hogar." />
 		<meta name="viewport" content="width=device-width" />
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 		<link rel="icon" type="image/svg+xml" href="/favicon-dark.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Geriatric Care</title>
@@ -60,12 +61,16 @@ import { ViewTransitions } from "astro:transitions"
 			.dark #nurse {
 				mask-image: linear-gradient(
 					to bottom,
-					black 82%,
-					transparent 86%
+					black 85%,
+					transparent 92%
 				);
 			}
 		</style>
 
 		<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
+		<script is:inline src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<script is:inline>
+			AOS.init()
+		</script>
 	</body>
 </html>

@@ -1,10 +1,10 @@
 ---
 
 ---
-
+<div id="start" class="w-full"></div>
 <header id="navbar" class="bg-[#F4E4BA] dark:bg-[#353535] transition-all sticky top-0 z-50">
   <nav class="max-w-screen-2xl flex flex-col lg:flex-row lg:justify-between lg:items-center gap-4 mx-auto px-2 pt-0 pb-2 lg:pb-0">
-    <a href="/" aria-label="home" class="flex items-center">
+    <a href="/#start" class="flex items-center">
       <img id="nav-logo" src="/logo.svg" class="w-full max-w-[350px] mx-auto lg:mx-0" alt="Geriatric Care Logo" />
     </a>
 
@@ -19,19 +19,19 @@
     <div class="hidden md:flex" id="navbar-default">
       <ul class="flex flex-col md:flex-row gap-2 md:items-center md:justify-center rounded-lg md:mx-auto lg:mx-0 font-bold">
         <li>
-          <a href="/" aria-label="home" class="block text-center py-2 px-4 w-full text-[#353535] rounded-full hover:bg-[#008000] hover:text-white dark:text-white dark:hover:bg-white dark:hover:text-[#353535] transition-all">Inicio</a>
+          <a href="/#start" aria-label="home" class="block text-center py-2 px-4 w-full rounded-full transition-all">Inicio</a>
         </li>
         <li>
-          <a href="/#services" aria-label="services" class="block text-center py-2 px-4 w-full text-[#353535] rounded-full hover:bg-[#008000] hover:text-white dark:text-white dark:hover:bg-white dark:hover:text-[#353535] transition-all">Servicios</a>
+          <a href="/#services" aria-label="services" class="block text-center py-2 px-4 w-full rounded-full transition-all">Servicios</a>
         </li>
         <li>
-          <a href="/#prices" aria-label="prices" class="block text-center py-2 px-4 w-full text-[#353535] rounded-full hover:bg-[#008000] hover:text-white dark:text-white dark:hover:bg-white dark:hover:text-[#353535] transition-all">Precios</a>
+          <a href="/#prices" aria-label="prices" class="block text-center py-2 px-4 w-full rounded-full transition-all">Precios</a>
         </li>
         <li>
-          <a href="/#about-us" aria-label="about-us" class="block text-center py-2 px-4 w-full text-[#353535] rounded-full hover:bg-[#008000] hover:text-white dark:text-white dark:hover:bg-white dark:hover:text-[#353535] transition-all">Nosotros</a>
+          <a href="/#about-us" aria-label="about-us" class="block text-center py-2 px-4 w-full rounded-full transition-all">Nosotros</a>
         </li>
         <li>
-          <a href="/#contact-us" aria-label="contact-us" class="block text-center py-2 px-4 w-full text-[#353535] rounded-full hover:bg-[#008000] hover:text-white dark:text-white dark:hover:bg-white dark:hover:text-[#353535] transition-all">Contáctanos</a>
+          <a href="/#contact-us" aria-label="contact-us" class="block text-center py-2 px-4 w-full rounded-full transition-all">Contáctanos</a>
         </li>
         
         <li>
@@ -46,50 +46,165 @@
 </header>
 
 <script>
-  const logo = document.getElementById('nav-logo')
-  const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon')
-  const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon')
+  document.addEventListener("astro:page-load", () => {
+    const logo = document.getElementById('nav-logo') 
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon')
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon')
+    const themeToggleBtn = document.getElementById('theme-toggle')
 
-  if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark')
-      logo.src = '/logo-dark.svg'
-  } else {
-      document.documentElement.classList.remove('dark')
-      logo.src = '/logo.svg'
-  }
+    const sections = document.querySelectorAll("section")
+    const navItems = document.querySelectorAll("header nav a")
 
-  if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      themeToggleLightIcon.classList.remove('hidden')
-  } else {
-      themeToggleDarkIcon.classList.remove('hidden')
-  }
-
-  const themeToggleBtn = document.getElementById('theme-toggle')
-
-  themeToggleBtn.addEventListener('click', function() {
-    themeToggleDarkIcon.classList.toggle('hidden')
-    themeToggleLightIcon.classList.toggle('hidden')
-
-    if (localStorage.getItem('color-theme')) {
-      if (localStorage.getItem('color-theme') === 'light') {
-          document.documentElement.classList.add('dark')
-          localStorage.setItem('color-theme', 'dark')
-          logo.src = '/logo-dark.svg'
-      } else {
-          document.documentElement.classList.remove('dark')
-          localStorage.setItem('color-theme', 'light')
-          logo.src = '/logo.svg'
-      }
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+        logo.setAttribute('src', '/logo-dark.svg')
     } else {
-      if (document.documentElement.classList.contains('dark')) {
-          document.documentElement.classList.remove('dark')
-          localStorage.setItem('color-theme', 'light')
-          logo.src = '/logo.svg'
+        document.documentElement.classList.remove('dark')
+        logo.setAttribute('src', '/logo.svg')
+    }
+
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        themeToggleLightIcon.classList.remove('hidden')
+    } else {
+        themeToggleDarkIcon.classList.remove('hidden')
+    }
+
+
+    themeToggleBtn.addEventListener('click', function() {
+      themeToggleDarkIcon.classList.toggle('hidden')
+      themeToggleLightIcon.classList.toggle('hidden')
+
+      if (localStorage.getItem('color-theme')) {
+        if (localStorage.getItem('color-theme') === 'light') {
+            document.documentElement.classList.add('dark')
+            localStorage.setItem('color-theme', 'dark')
+            logo.setAttribute('src', '/logo-dark.svg')
+            navItems.forEach(item => {
+              if(item.getAttribute("aria-label") !== null){
+                item.classList.remove("light")
+                item.classList.add("dark")
+              }
+            })
+        } else {
+            document.documentElement.classList.remove('dark')
+            localStorage.setItem('color-theme', 'light')
+            logo.setAttribute('src', '/logo.svg')
+            navItems.forEach(item => {
+              if(item.getAttribute("aria-label") !== null){
+                item.classList.remove("dark")
+                item.classList.add("light")
+              }
+            })
+        }
       } else {
-          document.documentElement.classList.add('dark')
-          localStorage.setItem('color-theme', 'dark')
-          logo.src = '/logo-dark.svg'
+        if (document.documentElement.classList.contains('dark')) {
+            document.documentElement.classList.remove('dark')
+            localStorage.setItem('color-theme', 'light')
+            logo.setAttribute('src', '/logo.svg')
+            navItems.forEach(item => {
+              if(item.getAttribute("aria-label") !== null){
+                item.classList.remove("dark")
+                item.classList.add("light")
+              }
+            })
+        } else {
+            document.documentElement.classList.add('dark')
+            localStorage.setItem('color-theme', 'dark')
+            logo.setAttribute('src', '/logo-dark.svg') 
+            navItems.forEach(item => {
+              if(item.getAttribute("aria-label") !== null){
+                item.classList.remove("light")
+                item.classList.add("dark")
+              }
+            })
+        }
+      }
+    })
+
+    const callback = (entries: any[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navItems.forEach((item) => {
+            if(item.getAttribute("aria-label") !== null){
+              item.classList.remove("selected", "deselected", "light", "dark")
+
+              if (item.getAttribute("aria-label") == entry.target.id) {
+                if (localStorage.getItem('color-theme') === 'light') {
+                  item.classList.add("selected", "light")
+                } else {
+                  item.classList.add("selected", "dark")
+                }
+              } else {
+                if (localStorage.getItem('color-theme') === 'light') {
+                  item.classList.add("deselected", "light")
+                } else {
+                  item.classList.add("deselected", "dark")
+                }
+              }
+            }
+          })
+        }
+      })
+    }
+
+    const observer = new IntersectionObserver(callback, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.3,
+    })
+
+    sections.forEach((section) => {
+      observer.observe(section)
+    })
+
+    document.onvisibilitychange = () => {
+      if (document.visibilityState === "hidden") {
+        observer.disconnect()
+      } else {
+        sections.forEach((section) => {
+          observer.observe(section)
+        })
       }
     }
   })
 </script>
+
+<style>
+  header nav a.light{
+    color: #353535;
+  }
+
+  header nav a.light:hover{
+    background-color: #008000;
+    color: white;
+  }
+  
+  header nav a.light.selected{
+    background-color: #008000;
+    color: white;
+  }
+
+  header nav a.light.selected:hover{
+    background-color: #006000;
+    color: white;
+  }
+
+  header nav a.dark{
+    color: white;
+  }
+
+  header nav a.dark:hover{
+    background-color: #F4E4BA;
+    color: #353535;
+  }
+  
+  header nav a.dark.selected{
+    background-color: #F4E4BA;
+    color: #353535;
+  }
+
+  header nav a.dark.selected:hover{
+    background-color: #FFE29A;
+    color: #353535;
+  }
+</style>

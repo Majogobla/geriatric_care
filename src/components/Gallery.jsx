@@ -83,7 +83,7 @@ export default function Counter() {
   const [index, setIndex] = useState(-1)
 
   return(
-    <section className=" w-full bg-[#F4E4BA] dark:bg-[#353535] min-h-screen flex flex-col justify-center pt-44 md:pt-32 lg:pt-20" id="about-us">
+    <>
       <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#353535] dark:text-white mb-4">Nuestro Trabajo</h2>
 
       <div className="max-w-screen-2xl w-full mx-auto p-4">
@@ -97,6 +97,6 @@ export default function Counter() {
         close={() => setIndex(-1)}
         plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
       />
-    </section>
+    </>
   )
 }
