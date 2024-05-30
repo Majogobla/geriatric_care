@@ -1,5 +1,6 @@
 ---
 import { ViewTransitions } from "astro:transitions"
+import "aos/dist/aos.css"
 ---
 
 <!doctype html>
@@ -12,7 +13,7 @@ import { ViewTransitions } from "astro:transitions"
 		<meta name="generator" content={Astro.generator} />
 		<title>Geriatric Care</title>
 		<ViewTransitions/>
-		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		<!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
 	</head>
 	<body>
 		<slot />
@@ -68,9 +69,14 @@ import { ViewTransitions } from "astro:transitions"
 		</style>
 
 		<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
-		<script is:inline src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<!-- <script is:inline src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 		<script is:inline>
 			AOS.init()
+		</script> -->
+		<script>
+			import { aosInit } from "../js/aos"
+
+			aosInit()
 		</script>
 	</body>
 </html>
