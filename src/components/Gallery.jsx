@@ -86,7 +86,7 @@ export default function Counter() {
     <>
       <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#353535] dark:text-white mb-4">Nuestro Trabajo</h2>
 
-      <div className="max-w-screen-2xl w-full mx-auto p-4">
+      <div className="max-w-screen-2xl w-full mx-auto p-2 md:p-4">
         <PhotoAlbum layout="columns" photos={images} onClick={({ index }) => setIndex(index)}/>
       </div>
 
