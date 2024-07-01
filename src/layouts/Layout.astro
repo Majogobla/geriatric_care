@@ -1,9 +1,6 @@
 ---
-interface Props {
-	title: string;
-}
-
-const { title } = Astro.props;
+import { ViewTransitions } from "astro:transitions"
+import "aos/dist/aos.css"
 ---
 
 <!doctype html>
@@ -14,15 +11,68 @@ const { title } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon-dark.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title>Geriatric Care</title>
+		<ViewTransitions/>
 	</head>
 	<body>
 		<slot />
 
+		<style is:global>
+			html {
+        scroll-behavior: smooth;
+      }
+
+			body {
+        overscroll-behavior: none;
+      }
+
+			@media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+
+			.floating { 
+					animation-name: floating; 
+					animation-duration: 3s; 
+					animation-iteration-count: infinite; 
+					animation-timing-function: ease-in-out;
+			}
+			
+			@keyframes floating { 
+					0% { transform: translate(0, 0px); } 
+					50% { transform: translate(0, 8px); } 
+					100% { transform: translate(0, -0px); }  
+			}
+		
+			.floating-4 { 
+					animation-name: floating; 
+					animation-duration: 4s; 
+					animation-iteration-count: infinite; 
+					animation-timing-function: ease-in-out;
+			} 
+		
+			@keyframes floating-4 { 
+					0% { transform: translate(0, 0px); } 
+					50% { transform: translate(0, 8px); } 
+					100% { transform: translate(0, -0px); }  
+			}
+		
+			.dark #nurse {
+				mask-image: linear-gradient(
+					to bottom,
+					black 78%,
+					transparent 88%
+				);
+			}
+		</style>
+
 		<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
+
+		<script>
+			import { aosInit } from "../js/aos"
+
+			aosInit()
+		</script>
 	</body>
 </html>
-
-<!-- <style is:global>
-	
-</style> -->

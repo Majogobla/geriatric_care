@@ -7,11 +7,12 @@ import Services from '../components/Services.astro'
 import Prices from '../components/Prices.astro'
 import Footer from '../components/Footer.astro'
 import ContactUs from '../components/ContactUs.astro'
-import NetworButtons from '../components/NetworkButtons.astro'
+import NetworkButtons from '../components/NetworkButtons.astro'
+import Gallery from '../components/Gallery.jsx'
 ---
 
-<Layout title="Geriatric Care">
-	<div class=" min-h-screen dark:bg-[#353535] ">
+<Layout>
+	<div class="min-h-screen dark:bg-[#353535]">
 		<Header/>
 
 		<PostHeader/>
@@ -22,9 +23,13 @@ import NetworButtons from '../components/NetworkButtons.astro'
 
 		<Prices/>
 
-		<ContactUs/>
+		<section data-aos="fade-right" class="w-full overflow-hidden bg-[#F4E4BA] dark:bg-[#353535] min-h-screen flex flex-col justify-center pt-44 md:pt-32 lg:pt-20" id="about-us">
+			<Gallery client:only="react"/>
+		</section>
 
-		<NetworButtons/>
+		<ContactUs/>
+		
+		<NetworkButtons/>
 
 		<Footer/>
 	</div>
