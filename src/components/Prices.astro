@@ -2,11 +2,11 @@
 
 ---
 <section class="px-2 md:px-4 w-full overflow-hidden min-h-screen pt-48 md:pt-56 lg:pt-44 flex items-center" id="prices">
-  <div class="max-w-screen-2xl mx-auto">
-    <h2 data-aos="fade-down" class="text-center text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#008000] dark:text-white mb-5">Precios</h2>
+  <div class="max-w-screen-2xl w-full mx-auto">
+    <h2 data-aos="fade-down" class="text-center text-4xl sm:text-3xl md:text-4xl font-extrabold text-[#008000] dark:text-white mb-10">Precios</h2>
   
-    <div class="gap-8 grid grid-cols-1 lg:grid-cols-3 pb-20">
-      <div id="first-price" data-aos="fade-right" data-aos-offset="100" class="w-full max-w-md mx-auto lg:mx-0 p-6 rounded-2xl shadow-xl dark:shadow-none bg-[#353535] sm:p-8 hover:scale-110 hover:rotate-2 transition-all hover:z-10 flex flex-col justify-between dark:border-2 dark:border-white">
+    <div class="gap-8 grid grid-cols-1 lg:grid-cols-2 pb-20">
+      <div id="first-price" data-aos="fade-right" data-aos-offset="100" class="w-full max-w-lg mx-auto p-6 rounded-2xl shadow-xl dark:shadow-none bg-[#353535] sm:p-8 hover:scale-110 hover:rotate-2 transition-all hover:z-10 flex flex-col justify-between dark:border-2 dark:border-white">
         <div class="gap-2 mb-6 flex justify-between items-center">
           <h3 class="text-xl sm:text-2xl md:text-3xl font-semibold text-white">Enfermeras</h3>
           
@@ -56,10 +56,10 @@
           </li>
         </ul>
 
-        <a href="#" class="block px-8 py-3 text-sm sm:text-base md:text-lg font-semibold text-center text-white transition duration-100 bg-white rounded-lg outline-none bg-opacity-20 hover:bg-opacity-30">Agenda tu servicio ahora</a>
+        <a href="https://wa.me/50373988858?text=Hola%2C%20estoy%20interesad%40%20en%20el%20servicio%20de%20enfermeras%20domiciliares" aria-label="Chat en WhatsApp" target="_blank" class="block px-8 py-3 text-sm sm:text-base md:text-lg font-semibold text-center text-white transition duration-100 bg-white rounded-lg outline-none bg-opacity-20 hover:bg-opacity-30">Agenda tu servicio ahora</a>
       </div>
 
-      <div id="second-price" data-aos="fade-up" data-aos-offset="300" class="w-full max-w-md mx-auto lg:mx-0 p-6 rounded-2xl shadow-xl dark:shadow-none bg-[#353535] sm:p-8 hover:scale-110 hover:rotate-2 transition-all hover:z-10 flex flex-col justify-between dark:border-2 dark:border-white">
+      <!-- <div id="second-price" data-aos="fade-up" data-aos-offset="300" class="w-full max-w-md mx-auto lg:mx-0 p-6 rounded-2xl shadow-xl dark:shadow-none bg-[#353535] sm:p-8 hover:scale-110 hover:rotate-2 transition-all hover:z-10 flex flex-col justify-between dark:border-2 dark:border-white">
         <div class="gap-2 mb-6 flex justify-between items-center">
           <h3 class="text-xl sm:text-2xl md:text-3xl font-semibold text-white">Neonatales / Pedriaticas</h3>
           
@@ -110,9 +110,9 @@
         </ul>
 
         <a href="#" class="block px-8 py-3 text-sm sm:text-base md:text-lg font-semibold text-center text-white transition duration-100 bg-white rounded-lg outline-none bg-opacity-20 hover:bg-opacity-30">Agenda tu servicio ahora</a>
-      </div>
+      </div> -->
 
-      <div id="third-price" data-aos="fade-left" data-aos-offset="600" class="w-full max-w-md mx-auto lg:mx-0 p-6 rounded-2xl shadow-xl dark:shadow-none bg-[#353535] sm:p-8 hover:scale-110 hover:rotate-2 transition-all hover:z-10 flex flex-col justify-between dark:border-2 dark:border-white">
+      <div id="third-price" data-aos="fade-left" data-aos-offset="600" class="w-full max-w-lg mx-auto p-6 rounded-2xl shadow-xl dark:shadow-none bg-[#353535] sm:p-8 hover:scale-110 hover:rotate-2 transition-all hover:z-10 flex flex-col justify-between dark:border-2 dark:border-white">
         <div class="gap-2 mb-6 flex justify-between items-center">
           <h3 class="text-xl sm:text-2xl md:text-3xl font-semibold text-white">Cuidadoras</h3>
           
@@ -161,7 +161,7 @@
           </li>
         </ul>
 
-        <a href="#" class="block px-8 py-3 text-sm sm:text-base md:text-lg font-semibold text-center text-white transition duration-100 bg-white rounded-lg outline-none bg-opacity-20 hover:bg-opacity-30">Agenda tu servicio ahora</a>
+        <a href="https://wa.me/50373988858?text=Hola%2C%20estoy%20interesad%40%20en%20el%20servicio%20de%20cuidadoras%20domiciliares" aria-label="Chat en WhatsApp" target="_blank" class="block px-8 py-3 text-sm sm:text-base md:text-lg font-semibold text-center text-white transition duration-100 bg-white rounded-lg outline-none bg-opacity-20 hover:bg-opacity-30">Agenda tu servicio ahora</a>
       </div>
     </div>
   </div>
@@ -169,7 +169,7 @@
 
 <script>
   const firstPrice = document.getElementById("first-price")
-  const secondPrice = document.getElementById("second-price")
+  // const secondPrice = document.getElementById("second-price")
   const thirdPrice = document.getElementById("third-price")
   
   delayCard(window.innerWidth)
@@ -181,12 +181,12 @@
   function delayCard(size) {
     if(size < 1024) {
       firstPrice.removeAttribute('data-aos-offset')
-      secondPrice.removeAttribute('data-aos-offset')
+      // secondPrice.removeAttribute('data-aos-offset')
       thirdPrice.removeAttribute('data-aos-offset')
     } else {
       firstPrice.setAttribute('data-aos-offset', '100')
-      secondPrice.setAttribute('data-aos-offset', '300')
-      thirdPrice.setAttribute('data-aos-offset', '600')
+      // secondPrice.setAttribute('data-aos-offset', '300')
+      thirdPrice.setAttribute('data-aos-offset', '300')
     }
   }
 </script>
