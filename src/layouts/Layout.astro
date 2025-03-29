@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from "astro:transitions"
 import "aos/dist/aos.css"
 ---
 
@@ -22,6 +23,7 @@ import "aos/dist/aos.css"
 		<meta name="generator" content={Astro.generator} />
 		<meta name="facebook-domain-verification" content="5u606v1gfbkyia8han1gzwcuylxwfm" />
 		<title>Geriatric Care</title>
+		<ViewTransitions/>
 	</head>
 	<body>
 		<slot />
@@ -76,7 +78,7 @@ import "aos/dist/aos.css"
 			}
 		</style>
 
-		<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
+		<script type="text/partytown" is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
 
 		<script>
 			import { aosInit } from "../js/aos"
