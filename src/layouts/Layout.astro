@@ -1,88 +1,123 @@
 ---
-import { ViewTransitions } from "astro:transitions"
-import "aos/dist/aos.css"
+import { ViewTransitions } from "astro:transitions";
+import "aos/dist/aos.css";
 ---
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<!-- Google tag (gtag.js) -->
-		<script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-NLTH60GKWX"></script>
-		<script type="text/partytown">
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      type="text/partytown"
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-NLTH60GKWX"></script>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-			gtag('config', 'G-NLTH60GKWX');
-		</script>
+      gtag("config", "G-NLTH60GKWX");
+      gtag("config", "AW-16968669456");
+    </script>
 
-		<meta charset="UTF-8" />
-		<meta name="description" content="En Geriatric Care contamos con enfermeras y cuidadoras en El Salvador para cuidados geriátricos, postoperatorios y del adulto mayor en casa u hospital. También realizamos traslado de pacientes, brindando calidad y calidez en cada servicio." />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="https://content.geriatriccaresv.com/favicon.png" />
-		<meta name="generator" content={Astro.generator} />
-		<meta name="facebook-domain-verification" content="5u606v1gfbkyia8han1gzwcuylxwfm" />
-		<title>Geriatric Care El Salvador - Enfermeras y Cuidadoras</title>
-		<ViewTransitions/>
-	</head>
-	<body>
-		<slot />
+    <!-- Event snippet for Contacto conversion page -->
+    <script type="text/partytown">
+      gtag("event", "conversion", {
+        send_to: "AW-16968669456/AmQbCOXRs7MaEJCypZs_",
+      });
+    </script>
 
-		<style is:global>
-			html {
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="En Geriatric Care contamos con enfermeras y cuidadoras en El Salvador para cuidados geriátricos, postoperatorios y del adulto mayor en casa u hospital. También realizamos traslado de pacientes, brindando calidad y calidez en cada servicio."
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://content.geriatriccaresv.com/favicon.png"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="facebook-domain-verification"
+      content="5u606v1gfbkyia8han1gzwcuylxwfm"
+    />
+    <title>Geriatric Care El Salvador - Enfermeras y Cuidadoras</title>
+    <ViewTransitions />
+  </head>
+  <body>
+    <slot />
+
+    <style is:global>
+      html {
         scroll-behavior: smooth;
       }
 
-			body {
+      body {
         overscroll-behavior: none;
       }
 
-			@media (prefers-reduced-motion: reduce) {
+      @media (prefers-reduced-motion: reduce) {
         html {
           scroll-behavior: auto;
         }
       }
 
-			.floating { 
-					animation-name: floating; 
-					animation-duration: 3s; 
-					animation-iteration-count: infinite; 
-					animation-timing-function: ease-in-out;
-			}
-			
-			@keyframes floating { 
-					0% { transform: translate(0, 0px); } 
-					50% { transform: translate(0, 8px); } 
-					100% { transform: translate(0, -0px); }  
-			}
-		
-			.floating-4 { 
-					animation-name: floating; 
-					animation-duration: 4s; 
-					animation-iteration-count: infinite; 
-					animation-timing-function: ease-in-out;
-			} 
-		
-			@keyframes floating-4 { 
-					0% { transform: translate(0, 0px); } 
-					50% { transform: translate(0, 8px); } 
-					100% { transform: translate(0, -0px); }  
-			}
-		
-			.dark #nurse {
-				mask-image: linear-gradient(
-					to bottom,
-					black 78%,
-					transparent 88%
-				);
-			}
-		</style>
+      .floating {
+        animation-name: floating;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+      }
 
-		<script type="text/partytown" is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
+      @keyframes floating {
+        0% {
+          transform: translate(0, 0px);
+        }
+        50% {
+          transform: translate(0, 8px);
+        }
+        100% {
+          transform: translate(0, -0px);
+        }
+      }
 
-		<script>
-			import { aosInit } from "../js/aos"
-			aosInit()
-		</script>
-	</body>
+      .floating-4 {
+        animation-name: floating;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+      }
+
+      @keyframes floating-4 {
+        0% {
+          transform: translate(0, 0px);
+        }
+        50% {
+          transform: translate(0, 8px);
+        }
+        100% {
+          transform: translate(0, -0px);
+        }
+      }
+
+      .dark #nurse {
+        mask-image: linear-gradient(to bottom, black 78%, transparent 88%);
+      }
+    </style>
+
+    <script
+      type="text/partytown"
+      is:inline
+      src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"
+    ></script>
+
+    <script>
+      import { aosInit } from "../js/aos";
+      aosInit();
+    </script>
+  </body>
 </html>
